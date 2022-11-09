@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+
+  <title>Homepage | Atom Template</title>
+
+  <meta property="og:title" content="Homepage | Atom Template" />
+
+  <meta property="og:locale" content="en_US" />
+
+  <link rel="canonical" href="//" />
+
+  <meta property="og:url" content="//" />
+
+  <meta name="description"
+    content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+
+  <link rel="icon" type="image/png" href="./assets/img/favicon.png" />
+
+  <meta name="theme-color" content="#5540af" />
+
+  <meta property="og:site_name" content="Atom Template" />
+
+  <meta property="og:image" content="./assets/img/social.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <meta name="twitter:site" content="@tailwindmade" />
+
+  <link crossorigin="crossorigin" href="https://fonts.gstatic.com" rel="preconnect" />
+
+  <link as="style"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
+    rel="preload" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+
+  <link crossorigin="anonymous" href="./assets/styles/main.min.css" media="screen" rel="stylesheet" />
+
+  <script defer src="https://unpkg.com/@alpine-collective/toolkit@1.0.0/dist/cdn.min.js"></script>
+
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+</head>
+
+
+<body :class="{ 'overflow-hidden max-h-screen': mobileMenu }" class="relative" x-data="{ mobileMenu: false }">
+
+  <div id="main" class="relative">
+    <div x-data="{
+    triggerNavItem(id) {
+        $scroll(id)
+    },
+    triggerMobileNavItem(id) {
+        mobileMenu = false;
+        this.triggerNavItem(id)
+    }
+}">
+      <div class="w-full z-50 top-0 py-3 sm:py-5  absolute">
+        <div class="container flex items-center justify-between">
+          <div>
+            <!-- <a href="/">
+              <img src="./assets/img/logo.svg" class="w-24 lg:w-48" alt="logo image" />
+            </a> -->
+          </div>
+          <div class="hidden lg:block">
+            <ul class="flex items-center">
+
+              <li class="group pl-6">
+
+                <span @click="triggerNavItem('#about')"
+                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">About</span>
+
+                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+              </li>
+
+              <li class="group pl-6">
+
+                <span @click="triggerNavItem('#services')"
+                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Skill</span>
+
+                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+              </li>
+
+              <li class="group pl-6">
+
+                <span @click="triggerNavItem('#portfolio')"
+                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Project</span>
+
+                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+              </li>
+
+              <li class="group pl-6">
+                <span @click="triggerNavItem('#work')"
+                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Work</span>
+
+                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+              </li>
+            </ul>
+          </div>
+          <div class="block lg:hidden">
+            <button @click="mobileMenu = true">
+              <i class="bx bx-menu text-4xl text-white"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden"
+        :class="{ 'opacity-100 pointer-events-auto': mobileMenu }">
+        <div class="absolute right-0 min-h-screen w-2/3 bg-primary py-4 px-8 shadow md:w-1/3">
+          <button class="absolute top-0 right-0 mt-4 mr-4" @click="mobileMenu = false">
+            <img src="./assets/img/icon-close.svg" class="h-10 w-auto" alt="" />
+          </button>
+
+          <ul class="mt-8 flex flex-col">
+
+            <li class="py-2">
+
+              <span @click="triggerMobileNavItem('#about')"
+                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">About</span>
+
+            </li>
+
+            <li class="py-2">
+
+              <span @click="triggerMobileNavItem('#services')"
+                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Services</span>
+
+            </li>
+
+            <li class="py-2">
+
+              <span @click="triggerMobileNavItem('#portfolio')"
+                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Portfolio</span>
+
+            </li>
+
+            <li class="py-2">
+
+              <span @click="triggerMobileNavItem('#work')"
+                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Work</span>
+
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="mx-auto">
+        <div class="relative bg-cover bg-center bg-no-repeat py-8"
+          style="background-image: url(./assets/img/bg-hero.jpg)">
+          <div
+            class="absolute inset-0 z-20 bg-gradient-to-r from-hero-gradient-from to-hero-gradient-to bg-cover bg-center bg-no-repeat">
+          </div>
+
+          <div class="container relative z-30 pt-20 pb-12 sm:pt-56 sm:pb-48 lg:pt-64 lg:pb-48">
+            <div class="flex flex-col items-center justify-center lg:flex-row">
+              <div class="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">
+                <h1 class="text-center font-header text-4xl text-white sm:text-left sm:text-5xl md:text-6xl">
+                  Hello I'm Nam Nguyen!
+                </h1>
+                <div class="flex flex-col justify-center pt-3 sm:flex-row sm:pt-5 lg:justify-start">
+                  <div class="flex items-center justify-center pl-0 sm:justify-start md:pl-1">
+                    <p class="font-body text-lg uppercase text-white">Let's connect</p>
+                    <div class="hidden sm:block">
+                      <i class="bx bx-chevron-right text-3xl text-yellow-500"></i>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
+
+                    <a href="https://github.com/manneyugn" target="_blank" class="pl-4">
+                      <i class="bx bxl-github text-2xl text-white hover:text-yellow-500"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/nam-nguy%E1%BB%85n-466b46186/" target="_blank" class="pl-4">
+                      <i class="bx bxl-linkedin text-2xl text-white hover:text-yellow-500"></i>
+                    </a>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=sonnam99@gmail.com" target="_blank"
+                      class="pl-4">
+                      <i class="bx bxl-gmail text-2xl text-white hover:text-yellow-500"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="bg-grey-50" id="about">
+          <div class="container flex flex-col items-center py-16 md:py-20 lg:flex-row mx-auto">
+            <div class="w-full text-center sm:w-3/4 lg:w-3/5 lg:text-left">
+              <h2 class="font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
+                Who am I?
+              </h2>
+              <h4 class="pt-6 font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
+                I'm Nam, a System Architecture wanna be Backend Developer
+              </h4>
+              <p class="pt-6 font-body leading-relaxed text-grey-20">
+                I'm a backend developer who trying to be system architecture, always think about user experience and
+                preformance before starting to code, love reading in my freetime.
+              </p>
+              <div class="flex flex-col justify-center pt-6 sm:flex-row lg:justify-start">
+                <div class="flex items-center justify-center sm:justify-start">
+                  <p class="font-body text-lg font-semibold uppercase text-grey-20">
+                    Connect with me
+                  </p>
+                  <div class="hidden sm:block">
+                    <i class="bx bx-chevron-right text-2xl text-primary"></i>
+                  </div>
+                </div>
+                <div class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
+                  <a ref="https://github.com/manneyugn" target="_blank">
+                    <i class="bx bxl-github text-2xl text-primary hover:text-yellow-500"></i>
+                  </a>
+                  <a href="https://www.linkedin.com/in/nam-nguy%E1%BB%85n-466b46186/" target="_blank" class="pl-4">
+                    <i class="bx bxl-linkedin text-2xl text-primary hover:text-yellow-500"></i>
+                  </a>
+                  <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=sonnam99@gmail.com" target="_blank"
+                    class="pl-4">
+                    <i class="bx bxl-gmail text-2xl text-primary hover:text-yellow-500"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="w-full pl-0 pt-10 sm:w-3/4 lg:w-2/5 lg:pl-12 lg:pt-0">
+              <div class="flex justify-center">
+                <div class="	text-xl font-semibold uppercase text-black mb-4">
+                  My skill set
+                </div>
+              </div>
+
+              <div>
+                <div class="flex items-end justify-between">
+                  <h4 class="font-body font-semibold text-black">Golang</h4>
+                  <h4 class="font-body font-semibold text-black">JavaScript & TypeScript</h4>
+                  <h4 class="font-body font-semibold text-black">Python</h4>
+                </div>
+              </div>
+              <div class="pt-6">
+                <div class="flex items-end justify-between">
+                  <h4 class="font-body font-semibold text-black">HTML & CSS</h4>
+                  <h4 class="font-body font-semibold text-black">ReactJS</h4>
+                  <h4 class="font-body font-semibold text-black">TailwindCSS</h4>
+                </div>
+              </div>
+              <div class="pt-6">
+                <div class="flex items-end justify-between">
+                  <h4 class="font-body font-semibold text-black">MySQL</h4>
+                  <h4 class="font-body font-semibold text-black">Kafka</h4>
+                  <h4 class="font-body font-semibold text-black">Redis</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container py-16 md:py-20 mx-auto" id="services">
+          <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
+            Here's what I'm can do
+          </h2>
+
+          <div class="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 md:gap-10 md:pt-12 lg:grid-cols-3">
+            <div class="group rounded px-8 py-12 shadow hover:scale-105 transform transition-all">
+              <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+                <div class="block">
+                  <img src="./assets/img/icon-development-black.svg" alt="development icon" />
+                </div>
+              </div>
+              <div class="text-center">
+                <h3 class="pt-8 text-lg font-semibold uppercase text-primary lg:text-xl">
+                  BACK-END DEVELOPMENT
+                </h3>
+                <p class="text-grey pt-4 text-sm md:text-base">
+                  RESTful API and preformance optimization
+                </p>
+              </div>
+            </div>
+
+            <div class="group rounded px-8 py-12 shadow hover:scale-105 transform transition-all">
+              <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+                <div class="block">
+                  <img src="./assets/img/icon-graphics-black.svg" alt="Graphic Design icon" />
+                </div>
+              </div>
+              <div class="text-center">
+                <h3 class="pt-8 text-lg font-semibold uppercase text-primary lg:text-xl">
+                  FRONT-END DEVELOPMENT
+                </h3>
+                <p class="text-grey pt-4 text-sm md:text-base">
+                  Average front-end skill, can work with ReactJS and CSS libary/framework
+                </p>
+              </div>
+            </div>
+
+
+            <div class="group rounded px-8 py-12 shadow hover:scale-105 transform transition-all">
+              <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+                <div class="block">
+                  <img src="./assets/img/icon-content-black.svg" alt="content marketing icon" />
+                </div>
+              </div>
+              <div class="text-center">
+                <h3 class="pt-8 text-lg font-semibold uppercase text-primary lg:text-xl">
+                  PRODUCT DEVELOPMENT
+                </h3>
+                <p class="text-grey pt-4 text-sm  md:text-base">
+                  Working with BA to develop product
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container py-16 md:py-20 mx-auto" id="portfolio">
+          <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
+            Check out my Portfolio
+          </h2>
+          <h3 class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
+            Here's what I have done with the past
+          </h3>
+
+          <div class="mx-auto grid w-full grid-cols-1 gap-8 pt-12 sm:w-3/4 md:gap-10 lg:w-full lg:grid-cols-3">
+            <a href="/" class="mx-auto transform transition-all hover:scale-105 md:mx-0">
+              <img src="./assets/img/trustkey-exchange.png" class="w-full shadow" alt="portfolio image" />
+            </a>
+            <a href="/" class="mx-auto transform transition-all hover:scale-105 md:mx-0">
+              <img src="./assets/img/trustkeys-network.png" class="w-full shadow" alt="portfolio image" />
+            </a>
+            <a href="/" class="mx-auto transform transition-all hover:scale-105 md:mx-0">
+              <img src="./assets/img/the-only.png" class="w-full shadow" alt="portfolio image" />
+            </a>
+          </div>
+          <div class="mx-auto grid w-1/2 grid-cols-1 gap-8 pt-12 sm:w-3/4 md:gap-10 lg:w-full">
+
+          </div>
+        </div>
+
+        <div class="container py-16 md:py-20 mx-auto" id="work">
+          <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
+            My work experience
+          </h2>
+
+          <div class="relative mx-auto mt-12 flex w-full flex-col lg:w-2/3">
+            <span class="left-2/5 absolute inset-y-0 ml-10 hidden w-0.5 bg-grey-40 md:block"></span>
+
+            <div class="mt-8 flex flex-col text-center md:flex-row md:text-left">
+              <div class="md:w-2/5">
+                <div class="flex justify-center md:justify-start">
+                  <span class="shrink-0">
+                    <img src="./assets/img/trustkeys-logo.png" class="h-auto w-32" alt="company logo" />
+                  </span>
+                  <div class="relative ml-3 hidden w-full md:block">
+                    <span class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="md:w-3/5">
+                <div class="relative flex md:pl-18">
+                  <span
+                    class="absolute left-8 top-1 hidden h-4 w-4 rounded-full border-2 border-grey-40 bg-white md:block"></span>
+
+                  <div class="mt-1 flex">
+                    <i class="bx bxs-right-arrow hidden text-primary md:block"></i>
+                    <div class="md:-mt-1 md:pl-8">
+                      <span class="block font-body font-bold text-grey-40">Jul 2020 - Aug 2022</span>
+                      <span class="block pt-2 font-header text-xl font-bold uppercase text-primary">Front-end & Back-end
+                        developer</span>
+                      <div class="pt-2">
+                        <span class="block font-body text-black">
+                          Develop and testing event-driven microservice system about blockchain and crypto currency
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./assets/js/main.js"></script>
+
+
+</body>
+
+</html>
